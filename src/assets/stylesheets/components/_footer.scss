@@ -1,0 +1,21 @@
+//This will change the styling of the elements containing the J Hopkins link
+footer {
+
+  width: 100%;
+  height: 2em;
+  line-height: 2em;
+  color: $white;
+  text-align: center;
+  background-color: #263238;
+
+  p {
+    font-size: 1em;
+    margin: 0;
+  }
+
+  a {
+
+    color:white;
+    font-weight: bold;
+  }
+}
