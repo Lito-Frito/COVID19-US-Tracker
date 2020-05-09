@@ -9,13 +9,12 @@ import Map from 'components/Map';
 
 const LOCATION = {
   lat: 38,
-  lng: -97
+  lng: -97,
 };
 const CENTER = [LOCATION.lat, LOCATION.lng];
 const DEFAULT_ZOOM = 3.5;
 
 const IndexPage = () => {
-
   /**
    * mapEffect
    * @description Fires a callback once the page renders
@@ -23,27 +22,27 @@ const IndexPage = () => {
    */
 
   async function mapEffect({ leafletElement: map } = {}) {
-    if (!map) return;
+    if ( !map ) return;
 
     let response;
 
     try {
-      response = await axios.get('https://corona.lmao.ninja/v2/jhucsse/counties')
-    } catch(e) {
-      console.log('E', e);
+      response = await axios.get( 'https://corona.lmao.ninja/v2/jhucsse/counties' );
+    } catch ( e ) {
+      console.log( 'E', e );
       return;
     }
-    console.log('response', response);
+    console.log( 'response', response );
 
     const { data } = response;
-    const hasData = Array.isArray(data) && data.length > 0;
+    const hasData = Array.isArray( data ) && data.length > 0;
 
     if ( !hasData ) return;
 
     const geoJson = {
       type: 'FeatureCollection',
       features: data.map(( county = {}) => {
-        const { updatedAt = {}, stats = {}, coordinates = {} } = county;
+        const { stats = {}, coordinates = {} } = county;
         const { latitude: lat, longitude: lng } = coordinates;
         return {
           type: 'Feature',
@@ -53,11 +52,11 @@ const IndexPage = () => {
           },
           geometry: {
             type: 'Point',
-            coordinates: [ lng, lat ],
-          }
-        }
-      })
-    }
+            coordinates: [lng, lat],
+          },
+        };
+      }),
+    };
 
     const geoJsonLayers = new L.GeoJSON( geoJson, {
       pointToLayer: ( feature = {}, latlng ) => {
@@ -65,22 +64,16 @@ const IndexPage = () => {
         let updatedFormatted;
         let casesString;
 
-        const {
-          county,
-          updatedAt,
-          confirmed,
-          deaths,
-          recovered
-        } = properties;
+        const { county, updatedAt, confirmed, deaths, recovered } = properties;
 
         casesString = `${confirmed}`;
 
         if ( confirmed > 1000 ) {
-          casesString = `${casesString.slice(0, -3)}K+`
+          casesString = `${casesString.slice( 0, -3 )}K+`;
         }
 
         if ( updatedAt ) {
-          updatedFormatted = new Date(updatedAt).toLocaleString();
+          updatedFormatted = new Date( updatedAt ).toLocaleString();
         }
 
         const html = `
@@ -90,8 +83,7 @@ const IndexPage = () => {
         `;
 
         const stats = `
-          <span class="icon-marker">
-            <span class="icon-marker-tooltip">
+          <span class="icon-marker-tooltip">
               <h2>${county}</h2>
               <ul>
                 <li><strong>Confirmed:</strong> ${confirmed.toLocaleString()}</li>
