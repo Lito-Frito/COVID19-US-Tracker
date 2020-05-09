@@ -3,7 +3,7 @@
 
 This is an app I made to track the spread of COVID19 in the US. I used a tutorial from [Colby Fayock](https://github.com/colbyfayock/gatsby-starter-leaflet) to bootstrap the app. Then I used an API from John Hopkins to pull in info by county.
 
-The app creates a map that shows the spread of COVID19 around the world via visual & statistical information.
+The app creates a map that shows the spread of COVID19 around the US by county, via visual & statistical information.
 
 The following is pulled from colbyfayock's README, with the change of my repo instead of his.
 
