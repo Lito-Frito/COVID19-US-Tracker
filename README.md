@@ -1,7 +1,7 @@
 # COVID19-US-Tracker
 ## Status: [![Netlify Status](https://api.netlify.com/api/v1/badges/02e88872-1e43-4ab0-936e-7fb3a71f9aa4/deploy-status)](https://app.netlify.com/sites/covid19-us-tracker/deploys)
 
-This is an app I made to track the spread of COVID19 in the US. I used a tutorial from [Colby Fayock(https://github.com/colbyfayock/gatsby-starter-leaflet)] to bootstrap the app. Then I used an API from John Hopkins to pull in info by county.
+This is an app I made to track the spread of COVID19 in the US. I used a tutorial from [!Colby Fayock(https://github.com/colbyfayock/gatsby-starter-leaflet)] to bootstrap the app. Then I used an API from John Hopkins to pull in info by county.
 
 The app creates a map that shows the spread of COVID19 around the world via visual & statistical information.
 
