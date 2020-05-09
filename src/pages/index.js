@@ -64,7 +64,7 @@ const IndexPage = () => {
         let updatedFormatted;
         let casesString;
 
-        const { county, updatedAt, confirmed, deaths, recovered } = properties;
+        const { county, updatedAt, confirmed, deaths } = properties;
 
         casesString = `${confirmed}`;
 
@@ -88,7 +88,6 @@ const IndexPage = () => {
               <ul>
                 <li><strong>Confirmed:</strong> ${confirmed.toLocaleString()}</li>
                 <li><strong>Deaths:</strong> ${deaths.toLocaleString()}</li>
-                <li><strong>Recovered:</strong> ${recovered.toLocaleString()}</li>
                 <li><strong>Last Update:</strong> ${updatedFormatted}</li>
               </ul>
             </span>
