@@ -10,7 +10,7 @@ const Header = () => {
         <p>US COVID19 Tracker</p>
         <ul>
           <li>
-            <a href="covid19-international-tracker.netlify.app/">World Tracker</a>
+            <a href="https://covid19-international-tracker.netlify.app/">World Tracker</a>
           </li>
         </ul>
       </Container>
