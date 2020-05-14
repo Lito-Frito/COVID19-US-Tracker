@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'gatsby';
+// import { Link } from 'gatsby';
 
 import Container from 'components/Container';
 
@@ -10,7 +10,7 @@ const Header = () => {
         <p>US COVID19 Tracker</p>
         <ul>
           <li>
-            <Link to="https://covid19-international-tracker.netlify.app/">World Tracker</Link>
+            <a href="covid19-international-tracker.netlify.app/">World Tracker</a>
           </li>
         </ul>
       </Container>
