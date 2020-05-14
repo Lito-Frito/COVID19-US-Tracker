@@ -1,5 +1,5 @@
 import React from 'react';
-// import { Link } from 'gatsby';
+import { Link } from 'gatsby';
 
 import Container from 'components/Container';
 
@@ -8,20 +8,14 @@ const Header = () => {
     <header>
       <Container type="content">
         <p>US COVID19 Tracker</p>
-
+        <ul>
+          <li>
+            <Link to="https://covid19-international-tracker.netlify.app/">World Tracker</Link>
+          </li>
+        </ul>
       </Container>
     </header>
   );
 };
 
 export default Header;
-//Need to make this the link to the US_Map
-// <ul>
-//   <li>
-//     <Link to="/">Home</Link>
-//   </li>
-
-// <li>
-//   <Link to="/page-2/">Page 2</Link>
-// </li>
-// </ul>
